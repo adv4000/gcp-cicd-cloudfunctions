@@ -1,5 +1,6 @@
 ## NodeJS App for GCP Cloud Functions deployed via GCP Cloud Build
 
+<br><img src="README.png"><br>
 
 In order to deploy via Cloud Build located in project MANAGEMENT to CloudFunction located in project STAGING,PROD you will need:
 
@@ -11,5 +12,5 @@ In order to deploy via Cloud Build located in project MANAGEMENT to CloudFunctio
      | Cloud Functions Developer | `roles/cloudfunctions.developer`|
      | Service Account User      | `roles/iam.serviceAccountUser`  |
 
-<br><img src="README.png"><hr>
+
 ### Copyleft (c) by Denis Astahov
