@@ -1,0 +1,33 @@
+# This CloudBuild will be triggered by push to staging branch
+#
+
+steps:
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  args: ['echo', 'Building...']
+  id: BUILD
+  
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  args: ['echo', 'Testing...']
+  id: TEST  
+  
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  args:
+  - gcloud
+  - functions
+  - deploy
+  - $_FUNCTION_NAME
+  - --region=$_FUNCTION_REGION
+  - --source=.
+  - --trigger-http
+  - --runtime=$_FUNCTION_RUNTIME
+  - --project=$_FUNCTION_PROJECT
+  - --entry-point=$_ENTRY_POINT
+  id: DEPLOY
+
+substitutions:
+    _FUNCTION_PROJECT : astahov-staging
+    _FUNCTION_NAME    : my-nodejs-app
+    _FUNCTION_REGION  : northamerica-northeast1
+    _FUNCTION_RUNTIME : nodejs14
+    _ENTRY_POINT      : helloWorld
+
