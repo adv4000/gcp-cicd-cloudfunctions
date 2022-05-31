@@ -25,7 +25,7 @@ steps:
   id: DEPLOY
 
 substitutions:
-    _FUNCTION_PROJECT : staging
+    _FUNCTION_PROJECT : Staging
     _FUNCTION_NAME    : nodejs-app
     _FUNCTION_REGION  : europe-west6
     _FUNCTION_RUNTIME : nodejs16
