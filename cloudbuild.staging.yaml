@@ -1,4 +1,4 @@
-# This CloudBuild will be triggered by push to staging branch
+# This CloudBuild will be triggered by push to staging branch.
 #
 
 steps:
